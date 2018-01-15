@@ -26,7 +26,7 @@ time.sleep(10)
 
 print("Login activity complete")
 
-Xpath="//img[contains(@alt,'Rishabh Kaushik')]"	
+Xpath="//img[contains(@src,'profile_pic_default_small')]"	
 navDropdown = driver.find_elements_by_xpath(Xpath)
 # print(navDropdown, "\n\n")
 menuClick = ActionChains(driver).move_to_element(navDropdown[0]).click().perform()
