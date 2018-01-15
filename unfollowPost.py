@@ -28,18 +28,38 @@ print("Login activity complete")
 
 Xpath="//img[contains(@alt,'Rishabh Kaushik')]"	
 navDropdown = driver.find_elements_by_xpath(Xpath)
-print(navDropdown, "\n\n")
+# print(navDropdown, "\n\n")
 menuClick = ActionChains(driver).move_to_element(navDropdown[0]).click().perform()
 time.sleep(5)
+print("Clicked profile dropdown")
 
 Xpath="//*[contains(@href,'/profile')]"	
 navDropdownMenuItems = driver.find_elements_by_xpath(Xpath)
 hrefs = [link.get_attribute('href') for link in navDropdownMenuItems]
-print(hrefs)
+# print(hrefs)
 
 profileUrl = hrefs[0]
 driver.get(profileUrl + "/following")
-time.sleep(10)
+time.sleep(3)
+print("Navigated to following users")
+
+Xpath="//*[contains(@action_click,'UserUnfollow')]"	
+followingButtons = driver.find_elements_by_xpath(Xpath)
+
+for followingButton in followingButtons:
+	followingButtonClick = followingButton.click()
+	time.sleep(0.1)
 
 driver.get(profileUrl + "/topics")
-time.sleep(10)
+time.sleep(3)
+
+# Xpath="//*[contains(@action_click,'TopicUnfollow')]"	
+# followingButtons = driver.find_elements_by_xpath(Xpath)
+
+# for followingButton in followingButtons:
+# 	followingButtonClick = followingButton.click()
+# 	time.sleep(0.1)
+# time.sleep(5)
+
+# driver.get(profileUrl)
+# time.sleep(10)
