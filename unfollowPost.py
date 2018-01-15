@@ -20,8 +20,14 @@ emailField[1].send_keys(username)
 Xpath="//input[contains(@id,'_password')]"	
 passwordField = driver.find_elements_by_xpath(Xpath)
 passwordField[1].send_keys(password)
-time.sleep(5)
+time.sleep(2)
 passwordField[1].send_keys(Keys.ENTER)
-time.sleep(5)
+time.sleep(10)
 
 print("Login activity complete")
+
+Xpath="//img[contains(@alt,'Rishabh Kaushik')]"	
+navDropdown = driver.find_elements_by_xpath(Xpath)
+print(navDropdown, "\n\n")
+menuClick = ActionChains(driver).move_to_element(navDropdown[0]).click().perform()
+time.sleep(5)
