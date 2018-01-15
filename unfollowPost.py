@@ -53,13 +53,13 @@ for followingButton in followingButtons:
 driver.get(profileUrl + "/topics")
 time.sleep(3)
 
-# Xpath="//*[contains(@action_click,'TopicUnfollow')]"	
-# followingButtons = driver.find_elements_by_xpath(Xpath)
+Xpath="//*[contains(@action_click,'TopicUnfollow')]"	
+followingButtons = driver.find_elements_by_xpath(Xpath)
 
-# for followingButton in followingButtons:
-# 	followingButtonClick = followingButton.click()
-# 	time.sleep(0.1)
-# time.sleep(5)
+for followingButton in followingButtons:
+	followingButtonClick = followingButton.click()
+	time.sleep(0.1)
+time.sleep(5)
 
-# driver.get(profileUrl)
-# time.sleep(10)
+driver.get(profileUrl)
+time.sleep(10)
